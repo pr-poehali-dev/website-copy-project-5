@@ -15,7 +15,7 @@ const MOCK_PRODUCTS = [
     category: 'Автоматы',
     brand: 'IEK',
     price: 245,
-    image: '/placeholder.svg',
+    image: 'https://cdn.poehali.dev/projects/37be30e9-855a-40dd-8c0c-a2046ed25616/files/962b5f28-0d8a-4c0f-abd6-1f14573da0a1.jpg',
     voltage: '230В',
     current: '16А',
     poles: '1P'
@@ -26,7 +26,7 @@ const MOCK_PRODUCTS = [
     category: 'Кабели',
     brand: 'Камкабель',
     price: 85,
-    image: '/placeholder.svg',
+    image: 'https://cdn.poehali.dev/projects/37be30e9-855a-40dd-8c0c-a2046ed25616/files/b0bc8a6d-fa98-4387-a723-d80f2cb9d342.jpg',
     voltage: '660В',
     section: '2.5 мм²',
     cores: '3'
@@ -37,7 +37,7 @@ const MOCK_PRODUCTS = [
     category: 'Розетки',
     brand: 'Legrand',
     price: 320,
-    image: '/placeholder.svg',
+    image: 'https://cdn.poehali.dev/projects/37be30e9-855a-40dd-8c0c-a2046ed25616/files/576b5d6c-c0f8-4d8f-8007-e851732fdb89.jpg',
     voltage: '230В',
     current: '16А',
     ip: 'IP20'
@@ -48,7 +48,7 @@ const MOCK_PRODUCTS = [
     category: 'Светильники',
     brand: 'Gauss',
     price: 1250,
-    image: '/placeholder.svg',
+    image: 'https://cdn.poehali.dev/projects/37be30e9-855a-40dd-8c0c-a2046ed25616/files/962b5f28-0d8a-4c0f-abd6-1f14573da0a1.jpg',
     power: '36Вт',
     color: '4000K',
     lumens: '2880лм'
@@ -59,7 +59,7 @@ const MOCK_PRODUCTS = [
     category: 'Щиты',
     brand: 'IEK',
     price: 890,
-    image: '/placeholder.svg',
+    image: 'https://cdn.poehali.dev/projects/37be30e9-855a-40dd-8c0c-a2046ed25616/files/962b5f28-0d8a-4c0f-abd6-1f14573da0a1.jpg',
     modules: '12',
     ip: 'IP40',
     material: 'Пластик'
@@ -70,7 +70,7 @@ const MOCK_PRODUCTS = [
     category: 'УЗО',
     brand: 'IEK',
     price: 1150,
-    image: '/placeholder.svg',
+    image: 'https://cdn.poehali.dev/projects/37be30e9-855a-40dd-8c0c-a2046ed25616/files/962b5f28-0d8a-4c0f-abd6-1f14573da0a1.jpg',
     current: '40А',
     sensitivity: '30мА',
     poles: '2P'
@@ -81,7 +81,7 @@ const MOCK_PRODUCTS = [
     category: 'Выключатели',
     brand: 'Schneider Electric',
     price: 180,
-    image: '/placeholder.svg',
+    image: 'https://cdn.poehali.dev/projects/37be30e9-855a-40dd-8c0c-a2046ed25616/files/576b5d6c-c0f8-4d8f-8007-e851732fdb89.jpg',
     voltage: '230В',
     current: '10А',
     ip: 'IP20'
@@ -92,7 +92,7 @@ const MOCK_PRODUCTS = [
     category: 'Гофра',
     brand: 'Рувинил',
     price: 28,
-    image: '/placeholder.svg',
+    image: 'https://cdn.poehali.dev/projects/37be30e9-855a-40dd-8c0c-a2046ed25616/files/b0bc8a6d-fa98-4387-a723-d80f2cb9d342.jpg',
     diameter: '20мм',
     material: 'ПНД',
     length: '1м'
@@ -267,8 +267,8 @@ export default function Index() {
                 {filteredProducts.map(product => (
                   <Card key={product.id} className="hover:shadow-lg transition-shadow">
                     <CardHeader>
-                      <div className="aspect-square bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
-                        <Icon name="Package" size={64} className="text-gray-300" />
+                      <div className="aspect-square bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
                       </div>
                       <Badge className="w-fit mb-2">{product.category}</Badge>
                       <CardTitle className="text-lg line-clamp-2">{product.name}</CardTitle>
